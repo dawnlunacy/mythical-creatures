@@ -28,6 +28,7 @@ describe('Sphinx', () => {
     sphinx.collectRiddle(riddle);
 
     assert.deepEqual(sphinx.riddles, [riddle]);
+    console.log(sphinx.riddles)
   });
 
   it('should collect only three riddles', () => {
@@ -36,10 +37,12 @@ describe('Sphinx', () => {
       riddle: 'What word becomes shorter when you add two letters to it?', 
       answer: 'short'
     };
+    console.log(sphinx.riddles.length)
     const riddle2 = {
       riddle: 'How far can a fox run into a grove?',
       answer: 'Halfway, after that it\'s running out.'
     };
+    console.log(sphinx.riddles)
     const riddle3 = {
       riddle: 'What starts with an \'e\' and ends with an \'e\' and contains one letter?',
       answer: 'An envelope'
@@ -57,7 +60,7 @@ describe('Sphinx', () => {
     assert.deepEqual(sphinx.riddles, [riddle2, riddle3, riddle4]);
   });
 
-  it('should accept a correct answer and remove riddle from list', () => {
+  it ('should accept a correct answer and remove riddle from list', () => {
     const sphinx = new Sphinx();
     const riddle1 = {
       riddle: 'What word becomes shorter when you add two letters to it?', 
